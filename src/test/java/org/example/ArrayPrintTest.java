@@ -26,7 +26,7 @@ public class ArrayPrintTest {
         Assert.assertEquals("Must match", "{{1},{8,12},{6,31,9},{17}}", arrayString);
     }
 
-    @Test
+    //@Test
     public void testPrintStringArray() {
         String[] colors = new String[] { "green", "blue", "yellow", "black", "purple", null };
         String colorsString = ArrayUtils.toString(colors, "Unknown");

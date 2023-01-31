@@ -1,0 +1,20 @@
+<Play>
+  <author>Roberto Mankoon</author>
+  <characters>
+    <character>
+      <descr>The is one always in depression</descr>
+      <name>Tristan</name>
+      <protagonist>true</protagonist>
+    </character>
+    <character>
+      <descr>Unstable mood</descr>
+      <name>Isolda</name>
+      <protagonist>false</protagonist>
+    </character>
+  </characters>
+  <genre>tragic</genre>
+  <language>english</language>
+  <name>Meet Caren</name>
+  <summary>A very sad tragedy</summary>
+  <year>2013</year>
+</Play>
