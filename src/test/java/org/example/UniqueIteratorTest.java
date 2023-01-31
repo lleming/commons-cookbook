@@ -6,9 +6,8 @@ import java.util.Collection;
 import java.util.Iterator;
 
 import org.apache.commons.collections.iterators.UniqueFilterIterator;
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class UniqueIteratorTest {
     @Test

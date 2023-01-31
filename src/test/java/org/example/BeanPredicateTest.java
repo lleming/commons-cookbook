@@ -61,9 +61,9 @@ public class BeanPredicateTest {
         Assert.assertEquals("public void org.example.Person.setAge(java.lang.Integer)", beanMap.getWriteMethod("age").toString());
         Assert.assertNull("Property doesn't exists", beanMap.getWriteMethod("medivalo"));
 
-        Integer age = (Integer) beanMap.getReadMethod("age").invoke(person);
+        int age = (Integer) beanMap.getReadMethod("age").invoke(person);
         Assert.assertEquals(22, age);
         beanMap.getWriteMethod("age").invoke(person, Integer.valueOf("44"));
-        Assert.assertEquals(44, person.getAge());
+        Assert.assertEquals(44, (int) person.getAge());
     }
 }

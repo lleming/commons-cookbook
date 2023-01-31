@@ -1,9 +1,8 @@
 package org.example;
 
 import org.apache.commons.lang.WordUtils;
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class WordUtilsTest {
     @Test

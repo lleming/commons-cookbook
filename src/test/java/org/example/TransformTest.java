@@ -20,9 +20,9 @@ public class TransformTest {
             }
 
         };
-        Long value = 7L;
-        Long actual = (Long) square.transform(value);
-        Assert.assertEquals(49L, actual);
+        double value = 7L;
+        double actual = ((Long) square.transform(value)).doubleValue();
+        Assert.assertEquals(49L, actual, 0.01);
     }
 
     @Test

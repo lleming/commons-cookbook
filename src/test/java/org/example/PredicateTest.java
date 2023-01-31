@@ -13,9 +13,8 @@ import org.apache.commons.collections.functors.NotNullPredicate;
 import org.apache.commons.collections.functors.OnePredicate;
 import org.apache.commons.collections.functors.OrPredicate;
 import org.apache.commons.collections.functors.UniquePredicate;
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class PredicateTest {
     @Test

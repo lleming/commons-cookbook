@@ -6,9 +6,8 @@ import java.util.Iterator;
 
 import org.apache.commons.collections.Predicate;
 import org.apache.commons.collections.iterators.FilterIterator;
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class FilterIteratorTest {
     @Test

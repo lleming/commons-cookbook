@@ -13,10 +13,9 @@ import org.apache.commons.digester.Substitutor;
 import org.apache.commons.digester.substitution.MultiVariableExpander;
 import org.apache.commons.digester.substitution.VariableSubstitutor;
 import org.apache.commons.digester.xmlrules.DigesterLoader;
+import org.junit.Assert;
 import org.junit.Test;
 import org.xml.sax.SAXException;
-
-import junit.framework.Assert;
 
 public class EmailTemplateDigesterTest {
     @Test

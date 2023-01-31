@@ -3,7 +3,9 @@ package org.example;
 import static org.junit.Assert.fail;
 
 import java.lang.reflect.InvocationTargetException;
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -13,9 +15,8 @@ import java.util.Map;
 
 import org.apache.commons.beanutils.BeanComparator;
 import org.apache.commons.beanutils.PropertyUtils;
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class PropertyUtilsTest {
     @Test
@@ -182,7 +183,11 @@ public class PropertyUtilsTest {
         countries.add(canada);
 
         Collections.sort(countries, new BeanComparator("name"));
-        Assert.assertEquals(List.of(canada, india, shrilanka), countries);
+        List expected =new ArrayList();
+        expected.add(canada);
+        expected.add(india);
+        expected.add(shrilanka);
+        Assert.assertEquals(expected, countries);
     }
 
     @Test
@@ -231,7 +236,8 @@ public class PropertyUtilsTest {
         Comparator vehicleComparator = new BeanComparator("engine", comparator);
         Collections.sort(vehicles, vehicleComparator);
 
-        Assert.assertEquals(List.of(vehicle3, vehicle1, vehicle2), vehicles);
+        List expected = Arrays.asList(vehicle3, vehicle1, vehicle2);
+        Assert.assertEquals(expected, vehicles);
     }
 
     @Test
@@ -271,7 +277,7 @@ public class PropertyUtilsTest {
         Book book = new Book();
         Person author = new Person();
         Chapter chapter = new Chapter();
-        book.setChapters(List.of(chapter));
+        book.setChapters(Arrays.asList(chapter));
         PropertyUtils.setProperty(book, "title", "Single iland");
         PropertyUtils.setProperty(book, "author", author);
         PropertyUtils.setProperty(book, "author.name", "Richard Morris");
@@ -285,7 +291,7 @@ public class PropertyUtilsTest {
     public void testPropertyIsReadable() {
         Book book = new Book();
         Chapter chapter = new Chapter();
-        book.setChapters(List.of(chapter));
+        book.setChapters(Arrays.asList(chapter));
         Assert.assertFalse(PropertyUtils.isReadable(book, "Blah"));
         Assert.assertTrue(PropertyUtils.isWriteable(book, "author"));
 

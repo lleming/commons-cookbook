@@ -2,10 +2,7 @@ package org.example;
 
 import java.math.BigDecimal;
 import java.util.Date;
-
-import org.junit.Test;
-
-import junit.framework.Assert;
+import org.junit.Assert;
 
 public class PoliticalCandidate2Test {
     //@Test

@@ -8,10 +8,9 @@ import java.util.List;
 
 import org.apache.commons.digester.Digester;
 import org.apache.commons.digester.xmlrules.DigesterLoader;
+import org.junit.Assert;
 import org.junit.Test;
 import org.xml.sax.SAXException;
-
-import junit.framework.Assert;
 
 public class LoadXmlIntoBeanTest {
     @Test

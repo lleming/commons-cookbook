@@ -5,15 +5,14 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
 
-import org.apache.commons.collections.BoundedFifoBuffer;
 import org.apache.commons.collections.Buffer;
 import org.apache.commons.collections.BufferOverflowException;
 import org.apache.commons.collections.BufferUnderflowException;
-import org.apache.commons.collections.UnboundedFifoBuffer;
+import org.apache.commons.collections.buffer.BoundedFifoBuffer;
 import org.apache.commons.collections.buffer.PriorityBuffer;
+import org.apache.commons.collections.buffer.UnboundedFifoBuffer;
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class BufferTest {
     @Test

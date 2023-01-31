@@ -7,9 +7,8 @@ import java.util.List;
 
 import org.apache.commons.collections.Predicate;
 import org.apache.commons.collections.list.PredicatedList;
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class ConstraintListTest {
     @Test

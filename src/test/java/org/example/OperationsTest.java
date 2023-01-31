@@ -9,10 +9,9 @@ import org.example.digester.LowerRule;
 import org.example.digester.Message;
 import org.example.digester.ReplaceRule;
 import org.example.digester.ReverseRule;
+import org.junit.Assert;
 import org.junit.Test;
 import org.xml.sax.SAXException;
-
-import junit.framework.Assert;
 
 public class OperationsTest {
         @Test public void testOperations() throws IOException, SAXException {

@@ -5,9 +5,8 @@ import java.net.URL;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.ConfigurationFactory;
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class NestedPropertiesConfigurationTest {
     @Test
@@ -27,6 +26,6 @@ public class NestedPropertiesConfigurationTest {
         Assert.assertEquals("Local property interactive", false, config.getBoolean("interactive"));
         Assert.assertEquals("Local property extel", "c", config.getString("extel"));
 
-        Assert.assertEquals("Global property timeout", 15.52F, config.getFloat("timeout"));
+        Assert.assertEquals("Global property timeout", 15.52F, config.getFloat("timeout"), 0.001);
     }
 }

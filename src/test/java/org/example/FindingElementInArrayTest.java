@@ -1,20 +1,19 @@
 package org.example;
 
 import org.apache.commons.lang.ArrayUtils;
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class FindingElementInArrayTest {
     String[] colors = new String[] { "blue", "red", "green", "purple", "yellow", "cyan" };
 
     @Test
-    public void testContais() {
+    public void testContains() {
         Assert.assertTrue("Must true", ArrayUtils.contains(colors, "red"));
     }
 
     @Test
-    public void TestContainsFailed() {
+    public void testContainsIsFalse() {
         Assert.assertFalse("Must false", ArrayUtils.contains(colors, "violet"));
     }
 

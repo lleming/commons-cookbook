@@ -23,6 +23,6 @@ public class SubstringSampleTest {
     public void testSubstrings() {
         String content = "{12}, {22}, {44}";
         String[] nums = StringUtils.substringsBetween(content, "{", "}");
-        Assert.assertEquals(new String[] { "12", "22", "44" }, nums);
+        Assert.assertArrayEquals(new String[] { "12", "22", "44" }, nums);
     }
 }

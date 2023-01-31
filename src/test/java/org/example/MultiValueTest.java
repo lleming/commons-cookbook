@@ -7,9 +7,8 @@ import javax.swing.plaf.multi.MultiPanelUI;
 
 import org.apache.commons.collections.MultiHashMap;
 import org.apache.commons.collections.MultiMap;
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class MultiValueTest {
     @Test

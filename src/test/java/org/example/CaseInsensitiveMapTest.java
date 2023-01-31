@@ -4,9 +4,8 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.collections.map.CaseInsensitiveMap;
+import org.junit.Assert;
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class CaseInsensitiveMapTest {
     @Test
