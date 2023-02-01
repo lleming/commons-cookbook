@@ -10,6 +10,8 @@ import java.util.Objects;
 import org.apache.commons.io.IOUtils;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
+import org.apache.velocity.app.VelocityEngine;
+import org.apache.velocity.runtime.RuntimeConstants;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -60,11 +62,63 @@ public class VelocityTemplatesTest {
     StringWriter writer = new StringWriter();
     Velocity.evaluate(context, writer, "test", reader);
 
-    String actual  = writer.toString();
+    String actual = writer.toString();
 
     String expected = new String(IOUtils.toByteArray(getClass().getClassLoader().getResourceAsStream("airport.html")));
     Assert.assertEquals(expected, actual);
+  }
 
+  @Test
+  public void testMacrosInTemplate() throws Exception {
+    VelocityEngine engine = new VelocityEngine();
+    engine.setProperty(RuntimeConstants.VM_CONTEXT_LOCALSCOPE, Boolean.TRUE);
+    engine.init();
+
+    Appointment appointment = newTestAppointment();
+    VelocityContext context = new VelocityContext();
+    context.put("appointment", appointment);
+
+    StringWriter writer = new StringWriter();
+    Reader reader = new InputStreamReader(
+        Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("macros-template.vm")));
+    engine.evaluate(context, writer, "test", reader);
+
+    String actual = writer.toString();
+    String expected = new String(IOUtils.toByteArray(
+        Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("macros-test-result.txt"))));
+    Assert.assertEquals(expected, actual);
+  }
+
+  private Appointment newTestAppointment() {
+    Appointment appointment = new Appointment();
+    Location location = new Location();
+    location.setName("Guliver Plaza");
+    location.setState("Alabama");
+    location.setCity("Huntsville");
+    location.setStreet1("Oakwood Ave NW");
+    location.setStreet2("4226");
+    location.setZipcode("35819");
+    appointment.setLocation(location);
+
+    Organization organization = new Organization();
+    organization.setEmail("oakwood@huntsville.com");
+    organization.setBaseUrl("https://oakwood-huntsville.com");
+    organization.setPresident(new Individual("Jeremy", "Unkal"));
+    appointment.setOrganization(organization);
+    Location organizationAddress = new Location();
+    organizationAddress.setStreet1("Dan Tibbs Rd NW");
+    organizationAddress.setStreet2("201");
+    organizationAddress.setZipcode("35806");
+    organizationAddress.setState("Alabama");
+    organizationAddress.setCity("Huntsville");
+    organization.setAddress(organizationAddress);
+
+    appointment.setDate(new Date(2021, 6, 9));
+    appointment.setStartTime(new Date(2021, 6, 9, 16, 30));
+    appointment.setEndTime(new Date(2021, 6, 9, 22, 45));
+    appointment.setVolunteer(new Individual("Ameliya", "Silvert"));
+    appointment.setId(45L);
+    return appointment;
   }
 
   private Subscription testSubscription() {

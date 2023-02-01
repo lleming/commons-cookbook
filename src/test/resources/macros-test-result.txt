@@ -1,0 +1,31 @@
+
+
+
+
+Ameliya Silvert,
+
+Thank you for volunteering to help serve food at the Guliver Plaza next week. This email
+is a reminder that you are scheduled  to help out from Sat Jul 09 16:30:00 ALMT 3921 to
+Sat Jul 09 22:45:00 ALMT 3921 on Sat Jul 09 00:00:00 ALMT 3921. The address for the shelter is
+
+Oakwood Ave NW
+4226
+Huntsville, Alabama 35819
+
+
+If you need directions to the shelter click the following URL:
+
+  https://oakwood-huntsville.com/directions?location=${location.id}
+
+Also, if you are unable to help out on Sat Jul 09 00:00:00 ALMT 3921, please let us know by
+sending email to oakwood@huntsville.com or by filling out the form at this URL:
+  https://oakwood-huntsville.com/planschange?appointment=45
+
+Thanks again,
+
+
+Jeremy Unkal
+
+Dan Tibbs Rd NW
+201
+Huntsville, Alabama 35806
