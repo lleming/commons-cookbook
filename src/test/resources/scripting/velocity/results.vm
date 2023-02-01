@@ -1,0 +1,13 @@
+** Aggregate statistics
+
+Average: $stat.average( $results.scores )%
+Lowest: $stat.min( $results.scores )%
+Highest: $stat.max( $results.scores )%
+
+** Scores
+#foreach ( $student in $results.students )
+  #score ( $student 50 )
+#end
+
+More results are available here:
+http://magictrip.com/detail?test=${results.id}

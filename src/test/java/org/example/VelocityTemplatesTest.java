@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -87,6 +88,40 @@ public class VelocityTemplatesTest {
     String expected = new String(IOUtils.toByteArray(
         Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("macros-test-result.txt"))));
     Assert.assertEquals(expected, actual);
+  }
+
+  @Test
+  public void testMethodInvokeInTemplate() throws Exception {
+    VelocityEngine engine = new VelocityEngine();
+    engine.setProperty("velocimacro.library", "scripting/velocity/macros.vm");
+    engine.setProperty("resource.loader", "class");
+    engine.setProperty("class.resource.loader.description", "Classpath Loader");
+    engine.setProperty("class.resource.loader.class",
+        "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
+
+    engine.init();
+
+    VelocityContext context = new VelocityContext();
+
+    context.put("results", testResults());
+    context.put("stat", new StatUtils());
+
+    StringWriter writer = new StringWriter();
+    engine.mergeTemplate("scripting/velocity/results.vm", context, writer);
+    String actual = writer.toString();
+    String expected =
+        new String(IOUtils.toByteArray(Objects.requireNonNull(
+        getClass().getClassLoader().getResourceAsStream("invoke-method-test-results.txt"))));
+    Assert.assertEquals(expected, actual);
+  }
+
+  private ExamResults testResults() {
+    List students = new ArrayList();
+    students.add(new Student("Tony", 17));
+    students.add(new Student("Hippa", 55));
+    students.add(new Student("Anuj", 77));
+    ExamResults results = new ExamResults(22L, new int[] {93, 67, 22, 96, 98, 80, 33, 74, 84, 11, 9}, students);
+    return results;
   }
 
   private Appointment newTestAppointment() {
