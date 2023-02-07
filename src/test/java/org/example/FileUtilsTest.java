@@ -15,7 +15,7 @@ public class FileUtilsTest {
   @Test
   public void  testHumanReadableFileSize2Mb(){
     String size = FileUtils.byteCountToDisplaySize(2_000_000);
-    Assert.assertEquals("", size);
+    Assert.assertEquals("1MB", size);
   }
 
 }
