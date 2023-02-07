@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<composers>
+  <composer>
+    <name>Bach, Johann Sebastian</name>
+    <born date="3/21/1685">
+      <location>Eisenbach</location>
+    </born>
+    <notes>Bach wrote intense and complex fugues.</notes>
+    <link>http://www.bachfaq.org</link>
+  </composer>
+  <composer>
+    <name>Mozart, Wolfgang Amadeus</name>
+    <born date="1/27/1756">
+      <location>Salzburg</location>
+    </born>
+    <notes>Wrote first symphony at age 8.</notes>
+    <link>http://www.mozartproject.org</link>
+  </composer>
+  <composer>
+    <name>Hendrix, Jimi</name>
+    <born date="11/27/1942">
+      <location>Seattle</location>
+    </born>
+    <notes>Hendrix set his guitar on fire in Monterey</notes>
+    <link>http://www.jimihendrix.com</link>
+  </composer>
+</composers>

@@ -12,6 +12,11 @@
 
 target/
 
+velocity.log
+
+.idea/
+.vscode/
+
 # Package Files #
 *.jar
 *.war
