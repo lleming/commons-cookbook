@@ -8,6 +8,6 @@ Highest: 98%
         Student: Tony Score: 17% FAIL
           Student: Hippa Score: 55% PASS
           Student: Anuj Score: 77% PASS
-
+  
 More results are available here:
 http://magictrip.com/detail?test=22

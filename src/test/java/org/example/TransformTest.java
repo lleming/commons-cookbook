@@ -21,7 +21,7 @@ public class TransformTest {
 
         };
         double value = 7L;
-        double actual = ((Long) square.transform(value)).doubleValue();
+        double actual = ((Double) square.transform(value)).doubleValue();
         Assert.assertEquals(49L, actual, 0.01);
     }
 

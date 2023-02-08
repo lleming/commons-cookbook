@@ -4,7 +4,6 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -111,7 +110,7 @@ public class VelocityTemplatesTest {
     String actual = writer.toString();
     String expected =
         new String(IOUtils.toByteArray(Objects.requireNonNull(
-        getClass().getClassLoader().getResourceAsStream("invoke-method-test-results.txt"))));
+            getClass().getClassLoader().getResourceAsStream("invoke-method-test-results.txt"))));
     Assert.assertEquals(expected, actual);
   }
 
