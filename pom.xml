@@ -96,6 +96,13 @@
       <version>1.0</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/commons-jxpath/commons-jxpath -->
+    <dependency>
+      <groupId>commons-jxpath</groupId>
+      <artifactId>commons-jxpath</artifactId>
+      <version>1.2</version>
+    </dependency>
+
     <!-- https://mvnrepository.com/artifact/velocity/velocity -->
     <dependency>
       <groupId>velocity</groupId>

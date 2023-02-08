@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<digester-rules>
+  <pattern value="planets/planet">
+    <object-create-rule classname="org.example.xpath.Planet"/>
+    <set-properties-rule/>
+    <pattern value="orbit">
+      <object-create-rule classname="org.example.xpath.Orbit"/>
+      <set-properties-rule/>
+      <set-next-rule methodname="setOrbit" paramtype="org.example.xpath.Orbit"/>
+    </pattern>
+    <pattern value="atmosphere">
+      <object-create-rule classname="org.example.xpath.Atmosphere"/>
+      <set-properties-rule/>
+      <pattern value="component">
+        <call-method-rule methodname="addComponent" paramcount="2"
+          paramtypes="java.lang.String,java.lang.Double"/>
+        <call-param-rule attrname="symbol" paramnumber="0"/>
+        <call-param-rule attrname="percentage" paramnumber="1"/>
+      </pattern>
+      <set-next-rule methodname="setAtmosphere" paramtype="org.example.xpath.Atmosphere"/>
+    </pattern>
+    <call-method-rule pattern="moon" methodname="addMoon" paramtypes="java.lang.String"
+      paramcount="0"/>
+    <set-next-rule methodname="add" paramtype="java.lang.Object"/>
+  </pattern>
+</digester-rules>
