@@ -15,7 +15,7 @@ public class TransformTest {
 
             @Override
             public Object transform(Object input) {
-                Long value = (Long) input;
+                Double value = (Double) input;
                 return value * value;
             }
 

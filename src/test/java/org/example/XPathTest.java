@@ -41,13 +41,13 @@ public class XPathTest {
 
     JXPathContext context = JXPathContext.newContext(league);
 
-    String xpath = "teams/players[name = 'Player Ted']";
+    String xpath = "teams/players[firstName='Player Ted']";
 
     Object value = context.getValue(xpath);
 
     Assert.assertEquals(new Person("Player Ted"), value);
 
-    String xpathPlayers = "teams/coach[name='Coach Susan']/../players";
+    String xpathPlayers = "teams/coach[firstName='Coach Susan']/../players";
     Object players = context.getValue(xpathPlayers);
     Assert.assertTrue(players instanceof List);
     Assert.assertEquals(1, ((List) players).size());
